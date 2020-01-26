@@ -26,3 +26,18 @@ jobs:
 
     - name: MSBuild
       run: msbuild SpreadEngineBeta.sln /p:Configuration=CIRelease /p:Platform="x64"
+    
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Hello World App
+        path: SPHelloWorld/bin/Release
+    
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Launcher
+        path: SpreadLauncher\bin\Release
+    
+    - uses: actions/upload-artifact@v1
+      with:
+        name: C++ Libs
+        path: x64/Release
