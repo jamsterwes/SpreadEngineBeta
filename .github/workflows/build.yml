@@ -28,7 +28,7 @@ jobs:
       run: msbuild SpreadEngineBeta.sln /p:Configuration=CIRelease /p:Platform="x64"
     
     - name: Copy C++ DLLs
-      run: robocopy x64/CIRelease/ SpreadLauncher/bin/CIRelease/ *.dll
+      run: (robocopy x64/CIRelease/ SpreadLauncher/bin/CIRelease/ *.dll) & exit 0
     
     - uses: actions/upload-artifact@v1
       with:
