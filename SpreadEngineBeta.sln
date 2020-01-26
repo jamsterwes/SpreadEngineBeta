@@ -29,6 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Main Engine", "Main Engine"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CIRelease|Any CPU = CIRelease|Any CPU
+		CIRelease|x64 = CIRelease|x64
+		CIRelease|x86 = CIRelease|x86
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
@@ -37,6 +40,12 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.CIRelease|Any CPU.ActiveCfg = CIRelease|Any CPU
+		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.CIRelease|Any CPU.Build.0 = CIRelease|Any CPU
+		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.CIRelease|x64.ActiveCfg = CIRelease|Any CPU
+		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.CIRelease|x64.Build.0 = CIRelease|Any CPU
+		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.CIRelease|x86.ActiveCfg = CIRelease|Any CPU
+		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.CIRelease|x86.Build.0 = CIRelease|Any CPU
 		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -49,6 +58,12 @@ Global
 		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.Release|x64.Build.0 = Release|Any CPU
 		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.Release|x86.ActiveCfg = Release|Any CPU
 		{44AAAB92-F8C8-48C6-8C87-19FDAFD6580D}.Release|x86.Build.0 = Release|Any CPU
+		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.CIRelease|Any CPU.ActiveCfg = CIRelease|Any CPU
+		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.CIRelease|Any CPU.Build.0 = CIRelease|Any CPU
+		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.CIRelease|x64.ActiveCfg = CIRelease|Any CPU
+		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.CIRelease|x64.Build.0 = CIRelease|Any CPU
+		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.CIRelease|x86.ActiveCfg = CIRelease|Any CPU
+		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.CIRelease|x86.Build.0 = CIRelease|Any CPU
 		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -61,6 +76,12 @@ Global
 		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.Release|x64.Build.0 = Release|Any CPU
 		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.Release|x86.ActiveCfg = Release|Any CPU
 		{2D18D870-FB3B-4478-8AF5-8507AFA350F9}.Release|x86.Build.0 = Release|Any CPU
+		{47634EAB-3570-4692-BCD1-F1043B77E906}.CIRelease|Any CPU.ActiveCfg = CIRelease|Any CPU
+		{47634EAB-3570-4692-BCD1-F1043B77E906}.CIRelease|Any CPU.Build.0 = CIRelease|Any CPU
+		{47634EAB-3570-4692-BCD1-F1043B77E906}.CIRelease|x64.ActiveCfg = CIRelease|Any CPU
+		{47634EAB-3570-4692-BCD1-F1043B77E906}.CIRelease|x64.Build.0 = CIRelease|Any CPU
+		{47634EAB-3570-4692-BCD1-F1043B77E906}.CIRelease|x86.ActiveCfg = CIRelease|Any CPU
+		{47634EAB-3570-4692-BCD1-F1043B77E906}.CIRelease|x86.Build.0 = CIRelease|Any CPU
 		{47634EAB-3570-4692-BCD1-F1043B77E906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47634EAB-3570-4692-BCD1-F1043B77E906}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47634EAB-3570-4692-BCD1-F1043B77E906}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -73,6 +94,11 @@ Global
 		{47634EAB-3570-4692-BCD1-F1043B77E906}.Release|x64.Build.0 = Release|Any CPU
 		{47634EAB-3570-4692-BCD1-F1043B77E906}.Release|x86.ActiveCfg = Release|Any CPU
 		{47634EAB-3570-4692-BCD1-F1043B77E906}.Release|x86.Build.0 = Release|Any CPU
+		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}.CIRelease|Any CPU.ActiveCfg = CIRelease|Win32
+		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}.CIRelease|x64.ActiveCfg = CIRelease|x64
+		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}.CIRelease|x64.Build.0 = CIRelease|x64
+		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}.CIRelease|x86.ActiveCfg = CIRelease|Win32
+		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}.CIRelease|x86.Build.0 = CIRelease|Win32
 		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}.Debug|x64.ActiveCfg = Debug|x64
 		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}.Debug|x64.Build.0 = Debug|x64
