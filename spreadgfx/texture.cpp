@@ -1,7 +1,7 @@
 #include <GL/glew.h>
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
-#include "texture.h"
+#include "texture.hpp"
 
 TextureInfo loadTexture(const char* filePath, bool linear)
 {

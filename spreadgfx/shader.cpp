@@ -1,5 +1,5 @@
 #include <GL/glew.h>
-#include "shader.h"
+#include "shader.hpp"
 #include <stdlib.h>
 
 GLuint compileShader(GLenum shaderType, const char* shaderSource)

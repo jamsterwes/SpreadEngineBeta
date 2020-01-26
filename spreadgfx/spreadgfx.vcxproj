@@ -243,15 +243,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="drawing.h" />
-    <ClInclude Include="framework.h" />
+    <ClInclude Include="drawing.hpp" />
+    <ClInclude Include="framework.hpp" />
     <ClInclude Include="IMGUI\imgui_fonts.hpp" />
     <ClInclude Include="IMGUI\imgui_impl_glfw.hpp" />
     <ClInclude Include="IMGUI\imgui_impl_opengl3.hpp" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="texture.h" />
-    <ClInclude Include="ui.h" />
-    <ClInclude Include="windowing.h" />
+    <ClInclude Include="shader.hpp" />
+    <ClInclude Include="texture.hpp" />
+    <ClInclude Include="ui.hpp" />
+    <ClInclude Include="windowing.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />

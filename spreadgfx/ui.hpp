@@ -1,5 +1,5 @@
 #pragma once
-#include "windowing.h"
+#include "windowing.hpp"
 
 #ifdef SPREADGFX_EXPORTS
 #define SPREAD_API extern "C" __declspec(dllexport)

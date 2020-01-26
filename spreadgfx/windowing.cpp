@@ -1,5 +1,5 @@
 #include <GL/glew.h>
-#include "windowing.h"
+#include "windowing.hpp"
 
 #include <algorithm>
 

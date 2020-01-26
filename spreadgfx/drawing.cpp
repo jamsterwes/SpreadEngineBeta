@@ -1,5 +1,5 @@
 #include <GL/glew.h>
-#include "drawing.h"
+#include "drawing.hpp"
 #include <cstdlib>
 
 GLuint genBuffer()
