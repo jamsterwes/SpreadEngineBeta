@@ -1,5 +1,5 @@
 #pragma once
-#include "include/GLFW/glfw3.h"
+#include <GLFW/glfw3.h>
 
 #ifdef SPREADGFX_EXPORTS
 #define SPREAD_API extern "C" __declspec(dllexport)

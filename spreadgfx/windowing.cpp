@@ -1,4 +1,4 @@
-#include "include/GL/glew.h"
+#include <GL/glew.h>
 #include "windowing.h"
 
 #include <algorithm>
