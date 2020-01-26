@@ -30,10 +30,11 @@ jobs:
     - name: Copy C++ DLLs
       run: robocopy x64/CIRelease/ SpreadLauncher/bin/CIRelease/ *.dll; exit 0
     
-    - uses: actions/upload-artifact@v1
-      with:
-        name: Hello World App
-        path: SPHelloWorld/bin/CIRelease
+    - name: Copy CI DLLs
+      run: robocopy CIDLLs/ SpreadLauncher/bin/CIRelease/ *.dll; exit 0
+    
+    - name: Copy Examples
+      run: robocopy SPHelloWorld/bin/CIRelease SpreadLauncher/bin/CIRelease/SPHelloWorld /MIR; exit 0
     
     - uses: actions/upload-artifact@v1
       with:
