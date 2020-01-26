@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\ApplicationRunner.cs" />
     <Compile Include="Bootstrap\AssemblyLoader.cs" />
+    <Compile Include="Rendering\Shader.cs" />
     <Compile Include="SpreadApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Color.cs" />
