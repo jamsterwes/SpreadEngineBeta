@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPHelloWorld", "SPHelloWorld\SPHelloWorld.csproj", "{2D18D870-FB3B-4478-8AF5-8507AFA350F9}"
 	ProjectSection(ProjectDependencies) = postProject
-		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C} = {B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}
 		{47634EAB-3570-4692-BCD1-F1043B77E906} = {47634EAB-3570-4692-BCD1-F1043B77E906}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadRuntime", "SpreadRuntime\SpreadRuntime.csproj", "{47634EAB-3570-4692-BCD1-F1043B77E906}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C} = {B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spreadgfx", "spreadgfx\spreadgfx.vcxproj", "{B78FEB7E-7012-4CDD-9905-F8257CBEAE6C}"
 EndProject
