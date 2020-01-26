@@ -19,7 +19,10 @@ jobs:
       run: nuget restore
 
     - name: Install vcpkg Packages
-      run: vcpkg install stb:x86-windows stb:x64-windows
+      run: vcpkg install stb:x64-windows
+    
+    - name: Integrate vcpkg into MSBuild
+      run: vcpkg integrate install
 
     - name: MSBuild
       run: msbuild SpreadEngineBeta.sln /p:Configuration=Release /p:Platform="x64"
