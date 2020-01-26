@@ -18,7 +18,7 @@ jobs:
     - name: NuGet Restore
       run: nuget restore
 
-    - name: Install C++ Packages
+    - name: Install VCPKG Packages
       run: vcpkg install stb:x64-windows
 
     - name: MSBuild
