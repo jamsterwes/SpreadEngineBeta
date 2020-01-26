@@ -1,4 +1,4 @@
-name: ASP.NET CI
+name: Build VS2019 Solution
 on: [push]
 jobs:
   build:
@@ -11,4 +11,4 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: MSBuild
-      run: msbuild SpreadEngineBeta.sln
+      run: msbuild /t:restore SpreadEngineBeta.sln
