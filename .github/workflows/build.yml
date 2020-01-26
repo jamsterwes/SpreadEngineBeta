@@ -27,6 +27,9 @@ jobs:
     - name: MSBuild
       run: msbuild SpreadEngineBeta.sln /p:Configuration=CIRelease /p:Platform="x64"
     
+    - name: Copy C++ DLLs
+      run: robocopy x64/CIRelease/ SpreadLauncher/bin/CIRelease/ *.dll
+    
     - uses: actions/upload-artifact@v1
       with:
         name: Hello World App
@@ -36,8 +39,3 @@ jobs:
       with:
         name: Launcher
         path: SpreadLauncher/bin/CIRelease
-    
-    - uses: actions/upload-artifact@v1
-      with:
-        name: C++ Libs
-        path: x64/CIRelease
