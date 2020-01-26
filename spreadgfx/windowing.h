@@ -32,6 +32,7 @@ struct WindowOptions
 	int glMajor, glMinor;
 	bool resizable;
 	char* windowTitle;
+	bool vsync;
 };
 #pragma pack(pop)
 

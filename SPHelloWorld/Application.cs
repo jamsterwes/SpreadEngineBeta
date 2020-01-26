@@ -1,7 +1,4 @@
-﻿using System.Windows.Forms;
-using System.IO;
-
-using SpreadRuntime;
+﻿using SpreadRuntime;
 using SpreadRuntime.Wrappers;
 
 namespace SPHelloWorld
@@ -10,15 +7,20 @@ namespace SPHelloWorld
     {
         public void Run()
         {
-            Windowing.Context ctx = Windowing.CreateWindowContext(new Windowing.Options(
-                1280, 720, 4, 4, false, "SPHelloWorld"
+            WindowLayer.Context ctx = WindowLayer.CreateWindowContext(new WindowLayer.Options(
+                1280, 720, 4, 4, false, "SPHelloWorld", true
             ));
 
-            while (Windowing.ShouldRender(ctx))
+            int i = 0;
+            while (WindowLayer.ShouldRender(ctx))
             {
-                Windowing.EnterRenderLoop(ctx);
+                GraphicsLayer.ClearColor((i >= 60) ? "#FF00FF" : "#00FF00");
+
+                WindowLayer.EnterRenderLoop(ctx);
                 // ...
-                Windowing.ExitRenderLoop(ctx);
+                WindowLayer.ExitRenderLoop(ctx);
+
+                i = (i + 1) % 120;
             }
         }
     }

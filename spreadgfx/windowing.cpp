@@ -9,7 +9,7 @@ Window::Window()
 {
 	const char* windowTitle = "No Properties for this Window!";
 	Initialize({
-		800, 600, 4, 3, false, const_cast<char*>(windowTitle)
+		800, 600, 4, 3, false, const_cast<char*>(windowTitle), false
 	});
 }
 
@@ -67,7 +67,7 @@ void Window::Initialize(WindowOptions cfg)
 	glfwSetKeyCallback(window, key_callback);
 
 	glfwMakeContextCurrent(window);
-	glfwSwapInterval(0);
+	glfwSwapInterval(cfg.vsync ? 1 : 0);
 
 	glEnable(GL_MULTISAMPLE);
 	glEnable(GL_CULL_FACE);

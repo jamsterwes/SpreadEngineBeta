@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace SpreadRuntime.Wrappers
 {
-    public static class Windowing
+    public static class WindowLayer
     {
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct Context
@@ -18,8 +18,9 @@ namespace SpreadRuntime.Wrappers
             int glMajor, glMinor;
             bool resizable;
             string windowTitle;
+            bool vsync;
 
-            public Options(int width, int height, int glMajor, int glMinor, bool resizable, string windowTitle)
+            public Options(int width, int height, int glMajor, int glMinor, bool resizable, string windowTitle, bool vsync)
             {
                 this.width = width;
                 this.height = height;
@@ -27,6 +28,7 @@ namespace SpreadRuntime.Wrappers
                 this.glMinor = glMinor;
                 this.resizable = resizable;
                 this.windowTitle = windowTitle;
+                this.vsync = vsync;
             }
         }
 

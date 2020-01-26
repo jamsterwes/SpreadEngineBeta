@@ -20,11 +20,18 @@ namespace SpreadRuntime.Bootstrap
 
         public static bool IsAssemblyValid(string assemblyPath)
         {
-            Type appType = GetApplicationType(assemblyPath);
-            if (appType == null) return false;
+            try
+            {
+                Type appType = GetApplicationType(assemblyPath);
 
-            var interfaces = new List<Type>(appType.GetInterfaces());
-            return interfaces.Contains(APPLICATION_INTERFACE);
+                if (appType == null) return false;
+                var interfaces = new List<Type>(appType.GetInterfaces());
+                return interfaces.Contains(APPLICATION_INTERFACE);
+            }
+            catch (BadImageFormatException e)
+            {
+                return false;
+            }
         }
 
         public static ISpreadApplication LoadAssembly(string assemblyPath)
