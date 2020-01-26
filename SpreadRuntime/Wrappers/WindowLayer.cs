@@ -45,5 +45,7 @@ namespace SpreadRuntime.Wrappers
         public extern static void ExitRenderLoop(Context ctx);
 
         // TODO: Input Handling
+        [DllImport("spreadgfx.dll")]
+        public extern static bool GetKeyDown(Context ctx, int keyCode);
     }
 }
