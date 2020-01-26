@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "include/GL/glew.h"
 #include "drawing.h"
 #include <cstdlib>

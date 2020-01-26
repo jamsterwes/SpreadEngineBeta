@@ -7,7 +7,7 @@ namespace SpreadRuntime.Bootstrap
     public static class AssemblyLoader
     {
         static readonly string APPLICATION_CLASSNAME = "Application";
-        static readonly Type APPLICATION_INTERFACE = typeof(ISpreadApplication);
+        static readonly Type APPLICATION_INTERFACE = typeof(SpreadApplication);
 
         public static Type GetApplicationType(string assemblyPath)
         {
@@ -34,10 +34,10 @@ namespace SpreadRuntime.Bootstrap
             }
         }
 
-        public static ISpreadApplication LoadAssembly(string assemblyPath)
+        public static SpreadApplication LoadAssembly(string assemblyPath)
         {
             Type appType = GetApplicationType(assemblyPath);
-            ISpreadApplication app = appType.GetConstructor(new Type[] { }).Invoke(new object[] { }) as ISpreadApplication;
+            SpreadApplication app = appType.GetConstructor(new Type[] { }).Invoke(new object[] { }) as SpreadApplication;
             return app;
         }
     }

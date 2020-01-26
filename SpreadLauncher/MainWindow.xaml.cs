@@ -57,8 +57,8 @@ namespace SpreadLauncher
             Hide();
 
             // Run application
-            ISpreadApplication app = AssemblyLoader.LoadAssembly(CurrentAssembly);
-            app.Run();
+            SpreadApplication app = AssemblyLoader.LoadAssembly(CurrentAssembly);
+            ApplicationRunner.RunApplication(app);
 
             // Shutdown after application is done
             Application.Current.Shutdown();

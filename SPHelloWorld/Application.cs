@@ -1,27 +1,38 @@
 ﻿using SpreadRuntime;
+using SpreadRuntime.Utilities;
 using SpreadRuntime.Wrappers;
+using System;
+using System.Windows.Forms;
 
 namespace SPHelloWorld
 {
-    public class Application : ISpreadApplication
+    public class Application : SpreadApplication
     {
-        public void Run()
+        Color clearColor;
+        float hue = 0.0f;
+
+        public Application() : base(new WindowLayer.Options(1280, 720, 4, 4, false, "SPHelloWorld", false))
         {
-            WindowLayer.Context ctx = WindowLayer.CreateWindowContext(new WindowLayer.Options(
-                1280, 720, 4, 4, false, "SPHelloWorld", true
-            ));
+            clearColor = Color.FromHSV(hue, 1.0f, 0.5f);
+        }
 
-            int i = 0;
-            while (WindowLayer.ShouldRender(ctx))
-            {
-                GraphicsLayer.ClearColor((i >= 60) ? "#FF00FF" : "#00FF00");
+        public override void Update()
+        {
+            clearColor = Color.FromHSV(hue, 1.0f, 0.5f);
+            GraphicsLayer.ClearColor(clearColor);
 
-                WindowLayer.EnterRenderLoop(ctx);
-                // ...
-                WindowLayer.ExitRenderLoop(ctx);
+            DrawTestWindow();
+            hue = (hue + 360.0f * deltaTime / 5.0f) % 360.0f;
+        }
 
-                i = (i + 1) % 120;
-            }
+        // --
+
+        public void DrawTestWindow()
+        {
+            UILayer.EnterUIWindow("Example Window");
+            UILayer.UIText($"Hue: {hue}");
+            UILayer.UIColorPicker3("Current Color", ref clearColor);
+            UILayer.ExitUIWindow();
         }
     }
 }

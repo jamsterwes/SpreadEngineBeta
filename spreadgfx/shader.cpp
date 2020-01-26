@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "include/GL/glew.h"
 #include "shader.h"
 #include <stdlib.h>
