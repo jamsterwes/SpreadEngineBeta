@@ -18,5 +18,8 @@ jobs:
     - name: NuGet Restore
       run: nuget restore
 
+    - name: Install C++ Packages
+      run: vcpkg install stb:x64-windows
+
     - name: MSBuild
       run: msbuild SpreadEngineBeta.sln /p:Configuration=Release /p:Platform="x64"
