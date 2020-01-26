@@ -25,4 +25,4 @@ jobs:
       run: vcpkg integrate install
 
     - name: MSBuild
-      run: msbuild SpreadEngineBeta.sln /p:Configuration=Debug /p:Platform="x64"
+      run: msbuild SpreadEngineBeta.sln /p:Configuration=CIRelease /p:Platform="x64"
