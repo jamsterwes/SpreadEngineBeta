@@ -102,12 +102,13 @@
     <LinkIncremental>false</LinkIncremental>
     <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
     <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
-    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='CIRelease|x64'">
     <LinkIncremental>false</LinkIncremental>
     <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
     <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
