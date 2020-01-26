@@ -28,7 +28,7 @@ namespace SpreadRuntime.Bootstrap
                 var interfaces = new List<Type>(appType.GetInterfaces());
                 return interfaces.Contains(APPLICATION_INTERFACE);
             }
-            catch (BadImageFormatException e)
+            catch (BadImageFormatException)
             {
                 return false;
             }

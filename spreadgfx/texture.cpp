@@ -23,6 +23,7 @@ TextureInfo loadTexture(const char* filePath, bool linear)
 	return info;
 }
 
+// TODO: STOP HARD-CODING TEXTURE SIZES FOR ARRAYS
 TextureInfo loadTextureArray(const char** filePaths, int fileCount)
 {
 	TextureInfo info;

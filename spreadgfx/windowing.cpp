@@ -56,9 +56,8 @@ void Window::Initialize(WindowOptions cfg)
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-	glfwWindowHint(GLFW_RESIZABLE, cfg.resizable ? GL_TRUE : GL_FALSE);
-
-	glfwWindowHint(GLFW_SAMPLES, 4);
+	glfwWindowHint(GLFW_RESIZABLE, cfg.resizable ? GL_TRUE : GL_FALSE);  // Resizable
+	glfwWindowHint(GLFW_SAMPLES, 4);  // 4x MSAA
 
 	window = glfwCreateWindow(cfg.width, cfg.height, cfg.windowTitle, nullptr, nullptr);
 	glfwSetWindowUserPointer(window, this);
@@ -67,14 +66,14 @@ void Window::Initialize(WindowOptions cfg)
 	glfwSetKeyCallback(window, key_callback);
 
 	glfwMakeContextCurrent(window);
-	glfwSwapInterval(cfg.vsync ? 1 : 0);
+	glfwSwapInterval(cfg.vsync ? 1 : 0);  // V-Sync
 
 	glEnable(GL_MULTISAMPLE);
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_CW);
-
-	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	// -- OLD MINECRAFT2 SETTINGS, MAKE CONFIGURABLE LATER
+	//glEnable(GL_CULL_FACE);
+	//glCullFace(GL_CW);
+	//glEnable(GL_BLEND);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glewExperimental = GL_TRUE;
 	glewInit();
