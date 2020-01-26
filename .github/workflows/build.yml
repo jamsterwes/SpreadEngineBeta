@@ -30,14 +30,14 @@ jobs:
     - uses: actions/upload-artifact@v1
       with:
         name: Hello World App
-        path: SPHelloWorld/bin/Release
+        path: SPHelloWorld/bin/CIRelease
     
     - uses: actions/upload-artifact@v1
       with:
         name: Launcher
-        path: SpreadLauncher\bin\Release
+        path: SpreadLauncher/bin/CIRelease
     
     - uses: actions/upload-artifact@v1
       with:
         name: C++ Libs
-        path: x64/Release
+        path: x64/CIRelease
