@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpreadRuntime.Wrappers;
+using System.Reflection;
+using SpreadRuntime.LowLevel.Wrappers;
+using System.Windows.Forms;
+using SpreadRuntime.Bootstrap.EventHooks;
+using SpreadRuntime.HighLevel;
 
 namespace SpreadRuntime.Bootstrap
 {
@@ -22,11 +26,14 @@ namespace SpreadRuntime.Bootstrap
             startTime = DateTime.Now;
 
             float lastFrameTime = GetTime();
+
+
             while (WindowLayer.ShouldRender(app.ctx))
             {
                 WindowLayer.EnterRenderLoop(app.ctx);
                 UILayer.EnterUIFrame();
 
+                InternalRunners<HookUpdateAttribute>(app);
                 app.Update();
 
                 UILayer.ExitUIFrame();
@@ -35,6 +42,20 @@ namespace SpreadRuntime.Bootstrap
                 app.time = GetTime();
                 app.deltaTime = GetTime() - lastFrameTime;
                 lastFrameTime = GetTime();
+            }
+        }
+
+        public static void InternalRunners<T>(SpreadApplication app) where T : Attribute
+        {
+            foreach (var field in app.GetType().GetFields())
+            {
+                foreach (var method in field.FieldType.GetMethods())
+                {
+                    if (method.GetCustomAttribute<T>() != null)
+                    {
+                        method.Invoke(field.GetValue(app), new object[] { app });
+                    }
+                }
             }
         }
     }

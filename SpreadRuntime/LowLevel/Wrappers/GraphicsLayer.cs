@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using SpreadRuntime.Utilities;
 using GlmSharp;
 
-namespace SpreadRuntime.Wrappers
+namespace SpreadRuntime.LowLevel.Wrappers
 {
     public static class GraphicsLayer
     {

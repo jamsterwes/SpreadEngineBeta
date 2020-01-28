@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using SpreadRuntime.Wrappers;
+using SpreadRuntime.LowLevel.Wrappers;
 
-namespace SpreadRuntime.Rendering
+namespace SpreadRuntime.LowLevel.Rendering
 {
     public class Shader
     {

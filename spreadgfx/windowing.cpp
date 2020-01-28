@@ -110,7 +110,12 @@ void ExitRenderLoop(WindowContext ctx)
 	glfwPollEvents();
 }
 
-bool GetKeyDown(WindowContext ctx, int key)
+bool GetKey(WindowContext ctx, int key)
 {
 	return (ctx.windowRef->keyState[key] == (int)KeyActions::KEY_DOWN) || (ctx.windowRef->keyState[key] == (int)KeyActions::KEY_PRESS);
+}
+
+bool GetKeyDown(WindowContext ctx, int key)
+{
+	return ctx.windowRef->keyState[key] == (int)KeyActions::KEY_PRESS;
 }

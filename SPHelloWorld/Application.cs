@@ -1,36 +1,44 @@
-﻿using SpreadRuntime;
+﻿using System;
+using SpreadRuntime;
 using SpreadRuntime.Utilities;
-using SpreadRuntime.Wrappers;
+using SpreadRuntime.LowLevel.Wrappers;
+
+using SpreadRuntime.HighLevel;
+using SpreadRuntime.HighLevel.Graphics2D;
+
 namespace SPHelloWorld
 {
     public class Application : SpreadApplication
     {
-        Color clearColor;
-        float hue = 0.0f;
+        public Camera2D camera2D = new Camera2D();
 
         // Initialize all engine variables within constructor
-        public Application() : base(new WindowLayer.Options(1280, 720, 4, 4, false, "SPHelloWorld", false), Properties.Resources.ResourceManager)
-        {
-            clearColor = Color.FromHSV(hue, 1.0f, 0.5f);
-        }
+        public Application() : base(new WindowLayer.Options(1280, 720, 4, 4, false, "SPHelloWorld", false), Properties.Resources.ResourceManager) { }
 
+        bool showDebugConsole = false;
         public override void Update()
         {
-            // Setup clear color
-            hue = (hue + 360.0f * deltaTime / 5.0f) % 360.0f;
-            clearColor = Color.FromHSV(hue, 1.0f, 0.5f);
-            GraphicsLayer.ClearColor(clearColor);
+            // Handle Input
+            if (WindowLayer.GetKeyDown(ctx, '`')) showDebugConsole = !showDebugConsole;
 
             // Draw UI
-            DrawTestWindow();
+            if (showDebugConsole) DrawDebugConsole();
+            DrawRenderConsole();
         }
 
         // --
 
-        public void DrawTestWindow()
+        public void DrawRenderConsole()
         {
-            UILayer.EnterUIWindow("Example Window");
-            UILayer.UIColorPicker3("Current Color", ref clearColor);
+            UILayer.EnterUIWindow("Render Console");
+            UILayer.UIColorPicker3("Clear Color", ref camera2D.clearColor);
+            UILayer.ExitUIWindow();
+        }
+
+        public void DrawDebugConsole()
+        {
+            UILayer.EnterUIWindow("Debug Console");
+            UILayer.UIText(string.Join("\n", DebugConsole.lines));
             UILayer.ExitUIWindow();
         }
     }

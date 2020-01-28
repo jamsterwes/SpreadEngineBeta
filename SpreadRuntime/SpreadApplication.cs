@@ -1,6 +1,6 @@
 ﻿using System.Resources;
 using System.Text;
-using SpreadRuntime.Wrappers;
+using SpreadRuntime.LowLevel.Wrappers;
 
 namespace SpreadRuntime
 {

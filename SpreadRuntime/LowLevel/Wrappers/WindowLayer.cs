@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace SpreadRuntime.Wrappers
+namespace SpreadRuntime.LowLevel.Wrappers
 {
     public static class WindowLayer
     {
@@ -45,6 +45,8 @@ namespace SpreadRuntime.Wrappers
         public extern static void ExitRenderLoop(Context ctx);
 
         // TODO: Input Handling
+        [DllImport("spreadgfx.dll")]
+        public extern static bool GetKey(Context ctx, int keyCode);
         [DllImport("spreadgfx.dll")]
         public extern static bool GetKeyDown(Context ctx, int keyCode);
     }

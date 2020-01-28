@@ -55,4 +55,5 @@ SPREAD_API void EnterRenderLoop(WindowContext ctx);
 SPREAD_API void ExitRenderLoop(WindowContext ctx);
 
 // Input
+SPREAD_API bool GetKey(WindowContext ctx, int key);
 SPREAD_API bool GetKeyDown(WindowContext ctx, int key);
