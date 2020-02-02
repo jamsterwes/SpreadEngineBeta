@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using GlmSharp;
 using SpreadRuntime.LowLevel.Wrappers;
 using SpreadRuntime.LowLevel.Rendering;
@@ -19,10 +14,12 @@ namespace SpreadRuntime.HighLevel.Graphics2D
 
         PhysicsLayer.PhysicsBody body;
 
+        public Sprite(vec2 size, vec2 offset) : base(size, offset) { }
+
         public void SetupPhysics(ref PhysicsLayer.PhysicsContext ctx, BodyType type)
         {
-            if (type == BodyType.Dynamic) body = PhysicsLayer.newDynamicBody(ctx, offset, size);
-            else if (type == BodyType.Static) body = PhysicsLayer.newGroundBody(ctx, offset, size);
+            if (type == BodyType.Dynamic) body = PhysicsLayer.PhysicsBody.DynamicBody(ctx, offset, size);
+            else if (type == BodyType.Static) body = PhysicsLayer.PhysicsBody.GroundBody(ctx, offset, size);
         }
 
         public void UpdatePhysics()
@@ -33,7 +30,7 @@ namespace SpreadRuntime.HighLevel.Graphics2D
         public override void Move(vec2 offset)
         {
             base.Move(offset);
-            // body.SetPosition(offset);
+            body.SetPosition(this.offset);
         }
     }
 }

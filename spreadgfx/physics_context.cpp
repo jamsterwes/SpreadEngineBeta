@@ -13,3 +13,8 @@ float physicsContext_getGravity(physics_context ctx)
 {
 	return ctx.world->GetGravity().y;
 }
+
+void physicsContext_step(physics_context ctx, float timestep)
+{
+	ctx.world->Step(timestep, 128, 128);
+}

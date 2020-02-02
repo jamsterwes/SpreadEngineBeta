@@ -14,9 +14,11 @@ namespace SPHelloWorld
 {
     public class Application : SpreadApplication
     {
+        public PhysicsLayer.PhysicsContext physicsContext;
+
         public Camera2D camera2D = new Camera2D();
-        public Quad floor = new Quad(new vec2(20.0f, 0.1f), new vec2(0.0f, -0.9f));
-        public Quad quad = new Quad(new vec2(0.1f, 0.1f), new vec2(-0.5f, -0.5f));
+        public Sprite floor = new Sprite(new vec2(20.0f, 0.1f), new vec2(0.0f, -0.9f));
+        public Sprite quad = new Sprite(new vec2(0.125f, 0.125f), new vec2(0.0f, 0.5f));
         public Shader shader;  // Don't load until constructor
         public PhysicsLayer.PhysicsBody floor_body, quad_body;
 
@@ -31,9 +33,9 @@ namespace SPHelloWorld
             camera2D.clearColor = new Color("#c0e6fc");
 
             // Physics
-            PhysicsLayer.PhysicsContext psctx = PhysicsLayer.PhysicsContext.NewContext(-9.8f);
-            floor_body = PhysicsLayer.newGroundBody(psctx, floor.offset, floor.size);
-            quad_body = PhysicsLayer.newGroundBody(psctx, quad.offset, quad.size);
+            physicsContext = PhysicsLayer.PhysicsContext.NewContext(-98.0f);
+            floor.SetupPhysics(ref physicsContext, Sprite.BodyType.Static);
+            quad.SetupPhysics(ref physicsContext, Sprite.BodyType.Dynamic);
         }
 
         bool showDebugConsole = false;
@@ -48,10 +50,15 @@ namespace SPHelloWorld
             if (WindowLayer.GetKeyDown(ctx, 'H')) DebugConsole.Write(quad_body.GetPosition().ToString());
             HandleQuadMovement();
 
-            // Draw Test Quad
+            // Update Physics
+            physicsContext.Step(1.0f / 60.0f);
+
             shader.SetColor("color", floorColor);
+            floor.UpdatePhysics();
             floor.Draw(shader);
+
             shader.SetColor("color", quadColor);
+            quad.UpdatePhysics();
             quad.Draw(shader);
         }
 
@@ -88,9 +95,9 @@ namespace SPHelloWorld
             UILayer.UIColorPicker3("Background Color", ref camera2D.clearColor);
             UILayer.UIColorPicker3("Quad Color", ref quadColor);
             UILayer.UISeparator();
-            UILayer.UIVector2("Quad Size", ref quad.size, 0.01f, 0.0f, 2.0f);
             UILayer.UIVector2("Quad Offset", ref quad.offset, 0.01f, -1.0f, 1.0f);
-            UILayer.UIVector2("Quad Rotation (Radians)", ref quad.rotation, 0.1f, -2.0f * (float)Math.PI, 2.0f * (float)Math.PI);
+            UILayer.UIVector2("Quad Size", ref quad.size, 0.1f, 0.0f, 10.0f);
+            UILayer.UIVector2("Floor Offset", ref floor.offset, 0.01f, -1.0f, 1.0f);
             UILayer.ExitUIWindow();
         }
 

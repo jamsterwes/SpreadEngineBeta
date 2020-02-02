@@ -6,6 +6,8 @@ namespace SpreadRuntime.LowLevel.Wrappers
 {
     public class PhysicsLayer
     {
+        const float PHYSICS_SCALING_TOPHYS = 100.0f;
+
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct PhysicsContext
         {
@@ -20,12 +22,19 @@ namespace SpreadRuntime.LowLevel.Wrappers
             {
                 return physicsContext_getGravity(this);
             }
+
+            public void Step(float timestep)
+            {
+                physicsContext_step(this, timestep);
+            }
         };
 
         [DllImport("spreadgfx.dll")]
         static extern PhysicsContext createPhysicsContext(float gravity);
         [DllImport("spreadgfx.dll")]
         static extern float physicsContext_getGravity(PhysicsContext ctx);
+        [DllImport("spreadgfx.dll")]
+        static extern void physicsContext_step(PhysicsContext ctx, float timestep);
 
         [StructLayout(LayoutKind.Sequential, Pack = 8)]
         public struct PhysicsBody
@@ -35,7 +44,22 @@ namespace SpreadRuntime.LowLevel.Wrappers
 
             public vec2 GetPosition()
             {
-                return new vec2(physicsBody_GetPositionX(this), physicsBody_GetPositionY(this));
+                return (new vec2(physicsBody_GetPositionX(this), physicsBody_GetPositionY(this))) / PHYSICS_SCALING_TOPHYS;
+            }
+
+            public void SetPosition(vec2 pos)
+            {
+                physicsBody_SetPosition(this, pos * PHYSICS_SCALING_TOPHYS);
+            }
+
+            public static PhysicsBody DynamicBody(PhysicsContext ctx, vec2 intl_pos, vec2 intl_size)
+            {
+                return newDynamicBody(ctx, intl_pos * PHYSICS_SCALING_TOPHYS, intl_size * PHYSICS_SCALING_TOPHYS);
+            }
+
+            public static PhysicsBody GroundBody(PhysicsContext ctx, vec2 intl_pos, vec2 intl_size)
+            {
+                return newGroundBody(ctx, intl_pos * PHYSICS_SCALING_TOPHYS, intl_size * PHYSICS_SCALING_TOPHYS);
             }
         };
 
@@ -49,5 +73,7 @@ namespace SpreadRuntime.LowLevel.Wrappers
         public static extern float physicsBody_GetPositionX(PhysicsBody body);
         [DllImport("spreadgfx.dll")]
         public static extern float physicsBody_GetPositionY(PhysicsBody body);
+        [DllImport("spreadgfx.dll")]
+        public static extern void physicsBody_SetPosition(PhysicsBody body, vec2 pos);
     }
 }

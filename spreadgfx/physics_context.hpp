@@ -16,3 +16,4 @@ struct physics_context
 
 SPREAD_API physics_context createPhysicsContext(float gravity);
 SPREAD_API float physicsContext_getGravity(physics_context ctx);
+SPREAD_API void physicsContext_step(physics_context ctx, float timestep);
