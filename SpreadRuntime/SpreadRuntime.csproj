@@ -65,6 +65,7 @@
     <Compile Include="HighLevel\Graphics2D\Camera2D.cs" />
     <Compile Include="Bootstrap\ApplicationRunner.cs" />
     <Compile Include="Bootstrap\AssemblyLoader.cs" />
+    <Compile Include="HighLevel\Graphics2D\Sprite.cs" />
     <Compile Include="LowLevel\Rendering\Quad.cs" />
     <Compile Include="LowLevel\Rendering\Shader.cs" />
     <Compile Include="LowLevel\Wrappers\PhysicsLayer.cs" />

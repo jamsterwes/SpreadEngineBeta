@@ -32,9 +32,22 @@ namespace SpreadRuntime.LowLevel.Wrappers
         {
             IntPtr body;
             IntPtr box;
+
+            public vec2 GetPosition()
+            {
+                return new vec2(physicsBody_GetPositionX(this), physicsBody_GetPositionY(this));
+            }
         };
 
         [DllImport("spreadgfx.dll")]
         public static extern PhysicsBody newGroundBody(PhysicsContext ctx, vec2 intl_pos, vec2 intl_size);
+
+        [DllImport("spreadgfx.dll")]
+        public static extern PhysicsBody newDynamicBody(PhysicsContext ctx, vec2 intl_pos, vec2 intl_size);
+    
+        [DllImport("spreadgfx.dll")]
+        public static extern float physicsBody_GetPositionX(PhysicsBody body);
+        [DllImport("spreadgfx.dll")]
+        public static extern float physicsBody_GetPositionY(PhysicsBody body);
     }
 }

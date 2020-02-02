@@ -18,6 +18,7 @@ namespace SPHelloWorld
         public Quad floor = new Quad(new vec2(20.0f, 0.1f), new vec2(0.0f, -0.9f));
         public Quad quad = new Quad(new vec2(0.1f, 0.1f), new vec2(-0.5f, -0.5f));
         public Shader shader;  // Don't load until constructor
+        public PhysicsLayer.PhysicsBody floor_body, quad_body;
 
         // Initialize all engine variables within constructor
         public Application() : base(new WindowLayer.Options(1280, 720, 4, 4, false, "SPHelloWorld", true), Properties.Resources.ResourceManager)
@@ -30,8 +31,9 @@ namespace SPHelloWorld
             camera2D.clearColor = new Color("#c0e6fc");
 
             // Physics
-            PhysicsLayer.PhysicsContext psctx = PhysicsLayer.PhysicsContext.NewContext(69.00f);
-            PhysicsLayer.PhysicsBody body = PhysicsLayer.newGroundBody(psctx, floor.offset, floor.size);
+            PhysicsLayer.PhysicsContext psctx = PhysicsLayer.PhysicsContext.NewContext(-9.8f);
+            floor_body = PhysicsLayer.newGroundBody(psctx, floor.offset, floor.size);
+            quad_body = PhysicsLayer.newGroundBody(psctx, quad.offset, quad.size);
         }
 
         bool showDebugConsole = false;
@@ -43,6 +45,7 @@ namespace SPHelloWorld
             // Handle Input
             if (WindowLayer.GetKeyDown(ctx, '`')) showDebugConsole = !showDebugConsole;
             if (WindowLayer.GetKeyDown(ctx, 'R')) RandomColor();
+            if (WindowLayer.GetKeyDown(ctx, 'H')) DebugConsole.Write(quad_body.GetPosition().ToString());
             HandleQuadMovement();
 
             // Draw Test Quad

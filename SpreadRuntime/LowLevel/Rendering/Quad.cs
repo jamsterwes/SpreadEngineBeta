@@ -85,12 +85,12 @@ namespace SpreadRuntime.LowLevel.Rendering
             GraphicsLayer.drawElements(vbo, ebo, (uint)ELEMS.Length);
         }
 
-        public void Move(vec2 offset)
+        public virtual void Move(vec2 offset)
         {
             this.offset += offset;
         }
 
-        public void Rotate(float angle)
+        public virtual void Rotate(float angle)
         {
             this.rotation.x += angle;
         }

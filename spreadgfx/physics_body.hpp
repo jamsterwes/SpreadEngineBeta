@@ -17,3 +17,7 @@ struct physics_body
 #pragma pack(pop)
 
 SPREAD_API physics_body newGroundBody(physics_context ctx, b2Vec2 intl_pos, b2Vec2 intl_size);
+SPREAD_API physics_body newDynamicBody(physics_context ctx, b2Vec2 intl_pos, b2Vec2 intl_size);
+
+SPREAD_API float physicsBody_GetPositionX(physics_body body);
+SPREAD_API float physicsBody_GetPositionY(physics_body body);
