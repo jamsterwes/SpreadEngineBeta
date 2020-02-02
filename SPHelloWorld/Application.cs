@@ -8,6 +8,8 @@ using SpreadRuntime.LowLevel.Rendering;
 using SpreadRuntime.HighLevel;
 using SpreadRuntime.HighLevel.Graphics2D;
 
+using GlmSharp;
+
 namespace SPHelloWorld
 {
     public class Application : SpreadApplication
@@ -24,14 +26,30 @@ namespace SPHelloWorld
         }
 
         bool showDebugConsole = false;
+
+        Color quadColor = new Color("#FFFFFF");
+        vec2 size = vec2.Ones * 0.125f;
+        vec2 offset = vec2.Zero;
+        vec2 rotation = vec2.Zero;
         public override void Update()
         {
             // Handle Input
             if (WindowLayer.GetKeyDown(ctx, '`')) showDebugConsole = !showDebugConsole;
             if (WindowLayer.GetKeyDown(ctx, 'R')) RandomColor();
 
+            if (WindowLayer.GetKey(ctx, 'W')) offset.y += deltaTime;
+            if (WindowLayer.GetKey(ctx, 'S')) offset.y -= deltaTime;
+            if (WindowLayer.GetKey(ctx, 'A')) offset.x -= deltaTime;
+            if (WindowLayer.GetKey(ctx, 'D')) offset.x += deltaTime;
+            if (WindowLayer.GetKey(ctx, 'Q')) rotation.x += deltaTime * (float)Math.PI;
+            if (WindowLayer.GetKey(ctx, 'E')) rotation.x -= deltaTime * (float)Math.PI;
+
             // Draw Test Quad
             shader.Use();
+            shader.SetColor("color", quadColor);
+            shader.SetVec2("size", size);
+            shader.SetVec2("offset", offset);
+            shader.SetVec2("rotation", rotation);
             quad.Draw();
         }
 
@@ -55,7 +73,12 @@ namespace SPHelloWorld
         public void DrawRenderConsole()
         {
             UILayer.EnterUIWindow("Render Console");
-            UILayer.UIColorPicker3("Clear Color", ref camera2D.clearColor);
+            UILayer.UIColorPicker3("Background Color", ref camera2D.clearColor);
+            UILayer.UIColorPicker3("Quad Color", ref quadColor);
+            UILayer.UISeparator();
+            UILayer.UIVector2("Quad Size", ref size, 0.01f, 0.0f, 2.0f);
+            UILayer.UIVector2("Quad Offset", ref offset, 0.01f, -1.0f, 1.0f);
+            UILayer.UIVector2("Quad Rotation (Radians)", ref rotation, 0.1f, -2.0f * (float)Math.PI, 2.0f * (float)Math.PI);
             UILayer.ExitUIWindow();
         }
 

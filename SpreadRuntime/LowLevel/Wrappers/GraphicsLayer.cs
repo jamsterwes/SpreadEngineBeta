@@ -133,6 +133,8 @@ namespace SpreadRuntime.LowLevel.Wrappers
         [DllImport("spreadgfx.dll")]
         public extern static void setAttribFloat(uint attrib, float f);
         [DllImport("spreadgfx.dll")]
+        public extern static void setAttribVec2(uint attrib, float x, float y);
+        [DllImport("spreadgfx.dll")]
         public extern static void setAttribColor(uint attrib, float r, float g, float b, float a);
         [DllImport("spreadgfx.dll")]
         public extern static void setAttribMatrix4(uint attrib, Matrix4 f);

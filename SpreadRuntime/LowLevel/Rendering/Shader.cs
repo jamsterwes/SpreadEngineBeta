@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+
 using SpreadRuntime.LowLevel.Wrappers;
+using SpreadRuntime.Utilities;
 
 namespace SpreadRuntime.LowLevel.Rendering
 {
@@ -18,6 +20,16 @@ namespace SpreadRuntime.LowLevel.Rendering
         public uint FindAttribute(string name)
         {
             return GraphicsLayer.attribLocation(program, name);
+        }
+
+        public void SetColor(string name, Color c)
+        {
+            GraphicsLayer.setAttribColor(FindAttribute(name), c.r, c.g, c.b, c.a);
+        }
+
+        public void SetVec2(string name, GlmSharp.vec2 vec)
+        {
+            GraphicsLayer.setAttribVec2(FindAttribute(name), vec.x, vec.y);
         }
 
         public void Use()

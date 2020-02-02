@@ -62,3 +62,13 @@ void UIColorPicker3(const char* label, Color* color)
 {
 	ImGui::ColorEdit3(label, (float*)color);
 }
+
+void UIVector2(const char* label, ImVec2* vec, float speed, float min, float max)
+{
+	ImGui::DragFloat2(label, (float*)vec, speed, min, max);
+}
+
+void UISeparator()
+{
+	ImGui::Separator();
+}

@@ -27,6 +27,7 @@ SPREAD_API GLuint attribLocation(GLuint shaderID, const char* attribName);
 SPREAD_API void setAttribInt(GLuint attrib, int i);
 SPREAD_API void setAttribFloat(GLuint attrib, float f);
 SPREAD_API void setAttribColor(GLuint attrib, float r, float g, float b, float a);
+SPREAD_API void setAttribVec2(GLuint attrib, float x, float y);
 SPREAD_API void setAttribMatrix4(GLuint attrib, Matrix4 mat);
 
 SPREAD_API Matrix4 allocMatrix4();

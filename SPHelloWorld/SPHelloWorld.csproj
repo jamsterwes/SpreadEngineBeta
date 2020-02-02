@@ -41,6 +41,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GlmSharp, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GlmSharp.0.9.8\lib\Net45\GlmSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -74,6 +77,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Shaders\simple_f.frag" />
     <None Include="Resources\Shaders\simple_v.vert" />
   </ItemGroup>

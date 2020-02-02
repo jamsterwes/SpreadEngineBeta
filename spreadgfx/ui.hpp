@@ -29,3 +29,6 @@ SPREAD_API bool UIButton(const char* label);
 SPREAD_API void UICheckbox(const char* label, bool* value);
 
 SPREAD_API void UIColorPicker3(const char* label, Color* color);
+SPREAD_API void UIVector2(const char* label, struct ImVec2* vec, float speed, float min, float max);
+
+SPREAD_API void UISeparator();

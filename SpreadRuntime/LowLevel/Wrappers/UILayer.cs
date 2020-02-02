@@ -29,5 +29,9 @@ namespace SpreadRuntime.LowLevel.Wrappers
         public static extern void UICheckbox([MarshalAs(UnmanagedType.LPStr)] string text, [In, Out] ref bool value);
         [DllImport("spreadgfx.dll")]
         public static extern void UIColorPicker3([MarshalAs(UnmanagedType.LPStr)] string text, [In, Out] ref Utilities.Color color);
+        [DllImport("spreadgfx.dll")]
+        public static extern void UISeparator();
+        [DllImport("spreadgfx.dll")]
+        public static extern void UIVector2([MarshalAs(UnmanagedType.LPStr)] string text, [In, Out] ref GlmSharp.vec2 vec, float speed = 1.0f, float min = 0.0f, float max = 1.0f);
     }
 }

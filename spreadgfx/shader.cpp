@@ -54,6 +54,11 @@ void setAttribFloat(GLuint attrib, float f)
 	glUniform1f(attrib, f);
 }
 
+void setAttribVec2(GLuint attrib, float x, float y)
+{
+	glUniform2f(attrib, x, y);
+}
+
 void setAttribColor(GLuint attrib, float r, float g, float b, float a)
 {
 	glUniform4f(attrib, r, g, b, a);
