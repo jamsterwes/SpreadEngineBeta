@@ -54,6 +54,16 @@ float physicsBody_GetPositionY(physics_body body)
 	return body.body->GetPosition().y;
 }
 
+float physicsBody_GetVelocityX(physics_body body)
+{
+	return body.body->GetLinearVelocity().x;
+}
+
+float physicsBody_GetVelocityY(physics_body body)
+{
+	return body.body->GetLinearVelocity().y;
+}
+
 void physicsBody_SetPosition(physics_body body, b2Vec2 pos)
 {
 	return body.body->SetTransform(pos, 0.0f);

@@ -13,6 +13,7 @@ namespace SpreadRuntime.HighLevel.Graphics2D
         };
 
         PhysicsLayer.PhysicsBody body;
+        public vec2 velocity = vec2.Zero;
 
         public Sprite(vec2 size, vec2 offset) : base(size, offset) { }
 
@@ -25,6 +26,7 @@ namespace SpreadRuntime.HighLevel.Graphics2D
         public void UpdatePhysics()
         {
             offset = body.GetPosition();
+            velocity = body.GetVelocity();
         }
 
         public override void Move(vec2 offset)

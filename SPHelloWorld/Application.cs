@@ -38,7 +38,7 @@ namespace SPHelloWorld
             quad.SetupPhysics(ref physicsContext, Sprite.BodyType.Dynamic);
         }
 
-        bool showDebugConsole = false;
+        bool showDebugConsole = true;
 
         Color floorColor = new Color("#318a0e");
         Color quadColor = new Color("#000055");
@@ -91,13 +91,15 @@ namespace SPHelloWorld
 
         public void DrawRenderConsole()
         {
-            UILayer.EnterUIWindow("Render Console");
-            UILayer.UIColorPicker3("Background Color", ref camera2D.clearColor);
-            UILayer.UIColorPicker3("Quad Color", ref quadColor);
-            UILayer.UISeparator();
-            UILayer.UIVector2("Quad Offset", ref quad.offset, 0.01f, -1.0f, 1.0f);
-            UILayer.UIVector2("Quad Size", ref quad.size, 0.1f, 0.0f, 10.0f);
-            UILayer.UIVector2("Floor Offset", ref floor.offset, 0.01f, -1.0f, 1.0f);
+            UILayer.EnterUIWindow("Physics Console");
+            UILayer.UIText($"Box Position\nX: {quad.offset.x:0.00} Y: {quad.offset.y:0.00}");
+            UILayer.UIText($"Box Velocity\nX: {quad.velocity.x:0.00} Y: {quad.velocity.y:0.00}");
+            //UILayer.UIColorPicker3("Background Color", ref camera2D.clearColor);
+            //UILayer.UIColorPicker3("Quad Color", ref quadColor);
+            //UILayer.UISeparator();
+            //UILayer.UIVector2("Quad Offset", ref quad.offset, 0.01f, -1.0f, 1.0f);
+            //UILayer.UIVector2("Quad Size", ref quad.size, 0.1f, 0.0f, 10.0f);
+            //UILayer.UIVector2("Floor Offset", ref floor.offset, 0.01f, -1.0f, 1.0f);
             UILayer.ExitUIWindow();
         }
 

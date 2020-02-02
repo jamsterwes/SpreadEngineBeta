@@ -47,6 +47,11 @@ namespace SpreadRuntime.LowLevel.Wrappers
                 return (new vec2(physicsBody_GetPositionX(this), physicsBody_GetPositionY(this))) / PHYSICS_SCALING_TOPHYS;
             }
 
+            public vec2 GetVelocity()
+            {
+                return (new vec2(physicsBody_GetVelocityX(this), physicsBody_GetVelocityY(this))) / PHYSICS_SCALING_TOPHYS;
+            }
+
             public void SetPosition(vec2 pos)
             {
                 physicsBody_SetPosition(this, pos * PHYSICS_SCALING_TOPHYS);
@@ -73,6 +78,10 @@ namespace SpreadRuntime.LowLevel.Wrappers
         public static extern float physicsBody_GetPositionX(PhysicsBody body);
         [DllImport("spreadgfx.dll")]
         public static extern float physicsBody_GetPositionY(PhysicsBody body);
+        [DllImport("spreadgfx.dll")]
+        public static extern float physicsBody_GetVelocityX(PhysicsBody body);
+        [DllImport("spreadgfx.dll")]
+        public static extern float physicsBody_GetVelocityY(PhysicsBody body);
         [DllImport("spreadgfx.dll")]
         public static extern void physicsBody_SetPosition(PhysicsBody body, vec2 pos);
     }
