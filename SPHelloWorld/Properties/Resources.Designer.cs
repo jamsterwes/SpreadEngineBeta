@@ -63,9 +63,19 @@ namespace SPHelloWorld.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] testshader_geom {
+        internal static byte[] simple_f {
             get {
-                object obj = ResourceManager.GetObject("testshader_geom", resourceCulture);
+                object obj = ResourceManager.GetObject("simple_f", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] simple_v {
+            get {
+                object obj = ResourceManager.GetObject("simple_v", resourceCulture);
                 return ((byte[])(obj));
             }
         }

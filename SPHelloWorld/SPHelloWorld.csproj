@@ -74,7 +74,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\Shaders\testshader.vert" />
+    <None Include="Resources\Shaders\simple_f.frag" />
+    <None Include="Resources\Shaders\simple_v.vert" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

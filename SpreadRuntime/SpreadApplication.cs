@@ -17,11 +17,12 @@ namespace SpreadRuntime
             UILayer.InitializeUI(ctx, "#version 440 core", "res/Roboto-Regular.ttf");
         }
         public virtual void Update() { }
+        public virtual void DrawUI() { }
 
         // Special stuff
         public static string LoadTextFileResource(string name)
         {
-            return Encoding.ASCII.GetString(res.GetObject(name) as byte[]);
+            return Encoding.UTF8.GetString(res.GetObject(name) as byte[]);
         }
     }
 }

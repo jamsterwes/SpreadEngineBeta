@@ -31,12 +31,14 @@ namespace SpreadRuntime.Bootstrap
             while (WindowLayer.ShouldRender(app.ctx))
             {
                 WindowLayer.EnterRenderLoop(app.ctx);
-                UILayer.EnterUIFrame();
 
                 InternalRunners<HookUpdateAttribute>(app);
                 app.Update();
 
+                UILayer.EnterUIFrame();
+                app.DrawUI();
                 UILayer.ExitUIFrame();
+
                 WindowLayer.ExitRenderLoop(app.ctx);
 
                 app.time = GetTime();
