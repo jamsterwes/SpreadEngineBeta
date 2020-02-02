@@ -15,19 +15,29 @@ namespace SPHelloWorld
     public class Application : SpreadApplication
     {
         public Camera2D camera2D = new Camera2D();
-        public Quad quad = new Quad();
+        public Quad floor = new Quad(new vec2(20.0f, 0.1f), new vec2(0.0f, -0.9f));
+        public Quad quad = new Quad(new vec2(0.1f, 0.1f), new vec2(-0.5f, -0.5f));
         public Shader shader;  // Don't load until constructor
 
         // Initialize all engine variables within constructor
         public Application() : base(new WindowLayer.Options(1280, 720, 4, 4, false, "SPHelloWorld", true), Properties.Resources.ResourceManager)
         {
+            floor.BufferToGPU();
             quad.BufferToGPU();
             shader = new Shader("simple_v", "simple_f");
+
+            // Set background color of sky
+            camera2D.clearColor = new Color("#c0e6fc");
+
+            // Physics
+            PhysicsLayer.PhysicsContext psctx = PhysicsLayer.PhysicsContext.NewContext(69.00f);
+            PhysicsLayer.PhysicsBody body = PhysicsLayer.newGroundBody(psctx, floor.offset, floor.size);
         }
 
         bool showDebugConsole = false;
 
-        Color quadColor = new Color("#FFFFFF");
+        Color floorColor = new Color("#318a0e");
+        Color quadColor = new Color("#000055");
         public override void Update()
         {
             // Handle Input
@@ -36,6 +46,8 @@ namespace SPHelloWorld
             HandleQuadMovement();
 
             // Draw Test Quad
+            shader.SetColor("color", floorColor);
+            floor.Draw(shader);
             shader.SetColor("color", quadColor);
             quad.Draw(shader);
         }

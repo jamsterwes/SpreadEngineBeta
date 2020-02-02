@@ -67,6 +67,7 @@
     <Compile Include="Bootstrap\AssemblyLoader.cs" />
     <Compile Include="LowLevel\Rendering\Quad.cs" />
     <Compile Include="LowLevel\Rendering\Shader.cs" />
+    <Compile Include="LowLevel\Wrappers\PhysicsLayer.cs" />
     <Compile Include="SpreadApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Color.cs" />

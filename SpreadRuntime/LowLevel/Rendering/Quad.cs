@@ -26,9 +26,37 @@ namespace SpreadRuntime.LowLevel.Rendering
 
         private uint vao, vbo, ebo;
 
-        public vec2 size = vec2.Ones;
-        public vec2 offset = vec2.Zero;
-        public vec2 rotation = vec2.Zero;
+        public vec2 size;
+        public vec2 offset;
+        public vec2 rotation;
+
+        public Quad()
+        {
+            size = vec2.Ones;
+            offset = vec2.Zero;
+            rotation = vec2.Zero;
+        }
+
+        public Quad(vec2 size)
+        {
+            this.size = size;
+            offset = vec2.Zero;
+            rotation = vec2.Zero;
+        }
+
+        public Quad(vec2 size, vec2 offset)
+        {
+            this.size = size;
+            this.offset = offset;
+            rotation = vec2.Zero;
+        }
+
+        public Quad(vec2 size, vec2 offset, vec2 rotation)
+        {
+            this.size = size;
+            this.offset = offset;
+            this.rotation = rotation;
+        }
 
         public void BufferToGPU()
         {

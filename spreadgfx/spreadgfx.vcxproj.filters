@@ -19,6 +19,18 @@
     <Filter Include="Header Files\IMGUI">
       <UniqueIdentifier>{241afe93-da63-4c4c-a04f-445746e7ac7f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\graphics">
+      <UniqueIdentifier>{6dcbaafd-3f26-4fe2-b2a1-519a623b0625}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\graphics">
+      <UniqueIdentifier>{0a8327dd-33d0-43b1-b970-d0f9f8bb56fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\physics">
+      <UniqueIdentifier>{67d46683-f14e-4fd8-9c4e-abc276ba1574}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\physics">
+      <UniqueIdentifier>{f730ff76-f852-467a-be09-901af5e2f60a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IMGUI\imgui_fonts.hpp">
@@ -30,42 +42,33 @@
     <ClInclude Include="IMGUI\imgui_impl_opengl3.hpp">
       <Filter>Header Files\IMGUI</Filter>
     </ClInclude>
-    <ClInclude Include="drawing.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="framework.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="drawing.hpp">
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
     <ClInclude Include="shader.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\graphics</Filter>
     </ClInclude>
     <ClInclude Include="texture.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\graphics</Filter>
     </ClInclude>
     <ClInclude Include="ui.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\graphics</Filter>
     </ClInclude>
     <ClInclude Include="windowing.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="physics_context.hpp">
+      <Filter>Header Files\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="physics_body.hpp">
+      <Filter>Header Files\physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="windowing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="shader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="drawing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="texture.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IMGUI\imgui_impl_glfw.cpp">
@@ -76,6 +79,27 @@
     </ClCompile>
     <ClCompile Include="IMGUI\imgui_fonts.cpp">
       <Filter>Source Files\IMGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="drawing.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="ui.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="windowing.cpp">
+      <Filter>Source Files\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="physics_context.cpp">
+      <Filter>Source Files\physics</Filter>
+    </ClCompile>
+    <ClCompile Include="physics_body.cpp">
+      <Filter>Source Files\physics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

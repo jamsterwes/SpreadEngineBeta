@@ -248,6 +248,8 @@
     <ClInclude Include="IMGUI\imgui_fonts.hpp" />
     <ClInclude Include="IMGUI\imgui_impl_glfw.hpp" />
     <ClInclude Include="IMGUI\imgui_impl_opengl3.hpp" />
+    <ClInclude Include="physics_body.hpp" />
+    <ClInclude Include="physics_context.hpp" />
     <ClInclude Include="shader.hpp" />
     <ClInclude Include="texture.hpp" />
     <ClInclude Include="ui.hpp" />
@@ -259,6 +261,8 @@
     <ClCompile Include="IMGUI\imgui_fonts.cpp" />
     <ClCompile Include="IMGUI\imgui_impl_glfw.cpp" />
     <ClCompile Include="IMGUI\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="physics_body.cpp" />
+    <ClCompile Include="physics_context.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="ui.cpp" />
