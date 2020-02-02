@@ -12,7 +12,9 @@ out vec2 vertexUV;
 void main()
 {
     vertexUV = uv;
-    vec2 rotpos = vec2(position.x * cos(rotation.x) - position.y * sin(rotation.x), position.y * cos(rotation.x) + position.x * sin(rotation.x));
+    vec2 rotpos = position * size;
+    rotpos = vec2(rotpos.x * cos(rotation.x) - rotpos.y * sin(rotation.x), rotpos.y * cos(rotation.x) + rotpos.x * sin(rotation.x));
+    rotpos += offset;
     rotpos.x = rotpos.x / ratio;
-    gl_Position = vec4(rotpos * size + offset, 0.0, 1.0);
+    gl_Position = vec4(rotpos, 0.0, 1.0);
 }

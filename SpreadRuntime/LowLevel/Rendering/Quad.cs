@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using GlmSharp;
 using SpreadRuntime.LowLevel.Wrappers;
 
 namespace SpreadRuntime.LowLevel.Rendering
@@ -25,6 +26,10 @@ namespace SpreadRuntime.LowLevel.Rendering
 
         private uint vao, vbo, ebo;
 
+        public vec2 size = vec2.Ones;
+        public vec2 offset = vec2.Zero;
+        public vec2 rotation = vec2.Zero;
+
         public void BufferToGPU()
         {
             // Gen buffers
@@ -43,9 +48,23 @@ namespace SpreadRuntime.LowLevel.Rendering
             GraphicsLayer.vertexAttrib(1, 2, vertexFloats, 2);  // in vec2 uv
         }
 
-        public void Draw()
+        public void Draw(Shader shader)
         {
+            shader.Use();
+            shader.SetVec2("size", size);
+            shader.SetVec2("offset", offset);
+            shader.SetVec2("rotation", rotation);
             GraphicsLayer.drawElements(vbo, ebo, (uint)ELEMS.Length);
+        }
+
+        public void Move(vec2 offset)
+        {
+            this.offset += offset;
+        }
+
+        public void Rotate(float angle)
+        {
+            this.rotation.x += angle;
         }
     }
 }
