@@ -57,6 +57,11 @@ namespace SpreadRuntime.LowLevel.Wrappers
                 physicsBody_SetPosition(this, pos * PHYSICS_SCALING_TOPHYS);
             }
 
+            public void ApplyImpulse(vec2 impulse)
+            {
+                physicsBody_ApplyImpulse(this, impulse * PHYSICS_SCALING_TOPHYS * PHYSICS_SCALING_TOPHYS);
+            }
+
             public static PhysicsBody DynamicBody(PhysicsContext ctx, vec2 intl_pos, vec2 intl_size)
             {
                 return newDynamicBody(ctx, intl_pos * PHYSICS_SCALING_TOPHYS, intl_size * PHYSICS_SCALING_TOPHYS);
@@ -84,5 +89,7 @@ namespace SpreadRuntime.LowLevel.Wrappers
         public static extern float physicsBody_GetVelocityY(PhysicsBody body);
         [DllImport("spreadgfx.dll")]
         public static extern void physicsBody_SetPosition(PhysicsBody body, vec2 pos);
+        [DllImport("spreadgfx.dll")]
+        public static extern void physicsBody_ApplyImpulse(PhysicsBody body, vec2 impulse);
     }
 }

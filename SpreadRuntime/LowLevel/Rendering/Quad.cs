@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using GlmSharp;
 using SpreadRuntime.LowLevel.Wrappers;
+using SpreadRuntime.HighLevel.Graphics2D;
 
 namespace SpreadRuntime.LowLevel.Rendering
 {
@@ -76,12 +77,13 @@ namespace SpreadRuntime.LowLevel.Rendering
             GraphicsLayer.vertexAttrib(1, 2, vertexFloats, 2);  // in vec2 uv
         }
 
-        public void Draw(Shader shader)
+        public void Draw(Shader shader, Camera2D camera)
         {
             shader.Use();
             shader.SetVec2("size", size);
             shader.SetVec2("offset", offset);
             shader.SetVec2("rotation", rotation);
+            shader.SetVec2("cameraOffset", camera.position);
             GraphicsLayer.drawElements(vbo, ebo, (uint)ELEMS.Length);
         }
 

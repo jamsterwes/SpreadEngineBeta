@@ -12,7 +12,7 @@ namespace SpreadRuntime.HighLevel.Graphics2D
             Static, Dynamic
         };
 
-        PhysicsLayer.PhysicsBody body;
+        public PhysicsLayer.PhysicsBody body;
         public vec2 velocity = vec2.Zero;
 
         public Sprite(vec2 size, vec2 offset) : base(size, offset) { }

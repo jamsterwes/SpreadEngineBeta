@@ -66,5 +66,10 @@ float physicsBody_GetVelocityY(physics_body body)
 
 void physicsBody_SetPosition(physics_body body, b2Vec2 pos)
 {
-	return body.body->SetTransform(pos, 0.0f);
+	body.body->SetTransform(pos, 0.0f);
+}
+
+void physicsBody_ApplyImpulse(physics_body body, b2Vec2 impulse)
+{
+	body.body->ApplyLinearImpulseToCenter(impulse, false);
 }
