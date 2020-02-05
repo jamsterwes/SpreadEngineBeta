@@ -61,6 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\EventHooks\HookUpdateAttribute.cs" />
+    <Compile Include="Bootstrap\SpreadComponent.cs" />
+    <Compile Include="Bootstrap\SpreadObject.cs" />
     <Compile Include="HighLevel\DebugConsole.cs" />
     <Compile Include="HighLevel\Graphics2D\Camera2D.cs" />
     <Compile Include="Bootstrap\ApplicationRunner.cs" />
