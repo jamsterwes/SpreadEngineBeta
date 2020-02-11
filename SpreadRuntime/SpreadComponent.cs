@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpreadRuntime.Bootstrap
+namespace SpreadRuntime
 {
     public interface SpreadComponent
     {

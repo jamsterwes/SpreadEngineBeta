@@ -1,15 +1,16 @@
-﻿using SpreadRuntime.Bootstrap;
+﻿using SpreadRuntime;
 using SPHelloWorld.Components;
 using System.Windows.Forms;
 
 namespace SPHelloWorld.Objects
 {
-    class BlankObject : SpreadObject
+    [UseComponent(typeof(BlankComponent))]
+    public class BlankObject : SpreadObject
     {
-        public BlankObject()
+        public BlankObject() : base(typeof(BlankObject))
         {
-            var blank = AddComponent<BlankComponent>();
-            MessageBox.Show(blank.f.ToString());
+            var x = GetComponent<BlankComponent>()?.f;
+            MessageBox.Show(x.ToString());
         }
     }
 }

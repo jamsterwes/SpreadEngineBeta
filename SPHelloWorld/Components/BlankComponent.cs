@@ -1,8 +1,8 @@
-﻿using SpreadRuntime.Bootstrap;
+﻿using SpreadRuntime;
 
 namespace SPHelloWorld.Components
 {
-    class BlankComponent : SpreadComponent
+    public class BlankComponent : SpreadComponent
     {
         public float f = 62.0f;
 

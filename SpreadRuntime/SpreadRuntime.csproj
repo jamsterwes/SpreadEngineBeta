@@ -61,8 +61,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\EventHooks\HookUpdateAttribute.cs" />
-    <Compile Include="Bootstrap\SpreadComponent.cs" />
-    <Compile Include="Bootstrap\SpreadObject.cs" />
+    <Compile Include="SpreadComponent.cs" />
+    <Compile Include="SpreadObject.cs" />
     <Compile Include="HighLevel\DebugConsole.cs" />
     <Compile Include="HighLevel\Graphics2D\Camera2D.cs" />
     <Compile Include="Bootstrap\ApplicationRunner.cs" />
@@ -73,6 +73,7 @@
     <Compile Include="LowLevel\Wrappers\PhysicsLayer.cs" />
     <Compile Include="SpreadApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UseComponentAttribute.cs" />
     <Compile Include="Utilities\Color.cs" />
     <Compile Include="LowLevel\Wrappers\GraphicsLayer.cs" />
     <Compile Include="LowLevel\Wrappers\UILayer.cs" />
